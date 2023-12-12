@@ -12,6 +12,8 @@ public class SpawnManagerX : MonoBehaviour
 
     private float startDelay = 1.0f;
     private float spawnInterval = 4.0f;
+    private float spawnIntervalMin = 3.0f;
+    private float spawnIntervalMax= 6.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +25,7 @@ public class SpawnManagerX : MonoBehaviour
     void SpawnRandomBall ()
     {
         int prefabIndex = Random.Range(0, ballPrefabs.Length);
-
+        spawnInterval = Random.Range(spawnIntervalMin, spawnIntervalMax);
         // Generate random ball index and random spawn position
         Vector3 spawnPos = new Vector3(Random.Range(spawnLimitXLeft, spawnLimitXRight), spawnPosY, 0);
         
